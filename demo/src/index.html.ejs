@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+
+      #react-planner {
+        position: relative;
+        width: 90vw;
+        height: 90vh;
+        margin: 5vh 0 5vh 5vw;
+        box-shadow: 0px 2px 10px rgba(0,0,0,0.7);
+      }
+
+      .output {
+        width: 90vw;
+        height: 90vh;
+        margin: 20px 0 5vh 5vw;
+      }
+
+      #demo-render {
+        margin: 0 auto 20px;
+        max-width: 90vw;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="react-planner"
+      data-state-selector='#state'
+      data-img-selector="#demo-render"
+      data-svg-selector="#svg"
+      data-storage-key="react-planner_v0"
+    ></div>
+    <a href="https://github.com/cvdlab/react-planner" target="_blank" style="display:<%= htmlWebpackPlugin.options.production ? 'block' : 'none' %>" >
+      <img style="position: fixed;top: 0px; right: 0px; border: 0px; z-index: 9001"
+      src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67"
+      alt="Fork me on GitHub"
+      data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"/>
+    </a>
+    <textarea id="state" class="output" cols="120" rows="20"></textarea>
+    <textarea id="svg" class="output" cols="120" rows="20"></textarea>
+    <img id="demo-render">
+  </body>
+</html>
